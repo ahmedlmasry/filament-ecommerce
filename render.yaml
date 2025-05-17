@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: laravel-app
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    buildCommand: ''
+    startCommand: apache2-foreground
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: YOUR_APP_KEY_HERE
+      - key: DB_CONNECTION
+        value: sqlite
